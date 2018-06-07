@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.administrator.helloworld.MainActivity">
+
+
+    <GridLayout
+        android:rowCount="2"
+        android:columnCount="2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登记资产和负债"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/recordAssetsAndLiabilitiesButton"
+             />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看资产和负债"
+            android:id="@+id/showAssetsAndLiabilitiesButton"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/button2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Button"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            android:id="@+id/button3" />
+
+    </GridLayout>
+</RelativeLayout>
