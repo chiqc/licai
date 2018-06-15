@@ -4,4 +4,12 @@
         <item>资产</item>
         <item>负债</item>
     </string-array>
+
+    <string-array name="expenditure_arr">
+        <item>衣服类</item>
+        <item>食物类</item>
+        <item>住所类</item>
+        <item>出行类</item>
+        <item>其他</item>
+    </string-array>
 </resources>

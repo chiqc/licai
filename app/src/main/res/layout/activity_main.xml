@@ -37,18 +37,18 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="登记收入和支出"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/button2" />
+            android:id="@+id/recordIncomeAndExpenditureButton" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="查看收入和支出"
             android:layout_columnWeight="1"
             android:layout_rowWeight="1"
-            android:id="@+id/button3" />
+            android:id="@+id/showIncomeAndExpenditureButton" />
 
     </GridLayout>
 </RelativeLayout>
