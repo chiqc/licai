@@ -12,4 +12,11 @@
         <item>出行类</item>
         <item>其他</item>
     </string-array>
+
+    <string-array name="income_arr">
+        <item>工资收入</item>
+        <item>理财通</item>
+        <item>余额宝</item>
+        <item>其他</item>
+    </string-array>
 </resources>

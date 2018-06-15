@@ -64,7 +64,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:text="资产增加"
-                android:id="@+id/incomeButton1" />
+                android:id="@+id/AssetsMoreButton" />
 
             <Button
                 android:layout_width="wrap_content"

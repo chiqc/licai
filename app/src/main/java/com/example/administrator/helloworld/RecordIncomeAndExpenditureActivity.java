@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class RecordIncomeAndExpenditureActivity extends AppCompatActivity {
-    private Button AssetsLessButton,LiabilitiesMoreButton;
+    private Button AssetsLessButton,LiabilitiesMoreButton,AssetsMoreButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +29,14 @@ public class RecordIncomeAndExpenditureActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
+        AssetsMoreButton=(Button) findViewById(R.id.AssetsMoreButton);
+        AssetsMoreButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(RecordIncomeAndExpenditureActivity.this,AssetsMoreActivity.class);
+                startActivity(intent);
+            }
+        });
 
 
     }

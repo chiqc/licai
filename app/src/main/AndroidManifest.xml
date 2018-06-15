@@ -20,7 +20,8 @@
         <activity android:name=".RecordIncomeAndExpenditureActivity" />
         <activity android:name=".LiabilitiesMoreActivity" />
         <activity android:name=".AssetsLessActivity" />
-        <activity android:name=".ShowIncomeAndExpenditureActivity"></activity>
+        <activity android:name=".ShowIncomeAndExpenditureActivity" />
+        <activity android:name=".AssetsMoreActivity"></activity>
     </application>
 
 </manifest>
