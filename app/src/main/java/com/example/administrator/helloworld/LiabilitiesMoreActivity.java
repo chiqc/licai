@@ -16,19 +16,19 @@ import com.example.administrator.helloworld.db.CreateAssetsAndLiabilitiesDb;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class AssetsLessActivity extends AppCompatActivity {
+public class LiabilitiesMoreActivity extends AppCompatActivity {
     private Button submitButton;
     private Spinner assetsSpinner,typeSpinner;
     private EditText detailTypeEditText,moneyEditText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_assets_less);
+        setContentView(R.layout.activity_liabilities_more);
 
-        //查询资产名称，并将数据显示在下拉框中
-        CreateAssetsAndLiabilitiesDb createDb = new CreateAssetsAndLiabilitiesDb(AssetsLessActivity.this);
+        //查询负债名称，并将数据显示在下拉框中
+        CreateAssetsAndLiabilitiesDb createDb = new CreateAssetsAndLiabilitiesDb(LiabilitiesMoreActivity.this);
         SQLiteDatabase db = createDb.getReadableDatabase();
-        Cursor cursor = db.rawQuery("select name from assets_and_liabilities where type='资产'",null);
+        Cursor cursor = db.rawQuery("select name from assets_and_liabilities where type='负债'",null);
         String[] assetsNameArr=new String[cursor.getCount()];
         for (int i = 0; i < cursor.getCount(); i++){
             cursor.moveToNext();
@@ -60,25 +60,27 @@ public class AssetsLessActivity extends AppCompatActivity {
                 SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
                 String now=simpleDateFormat.format(date);
                 //数据插入数据库
-                CreateAssetsAndLiabilitiesDb createDb = new CreateAssetsAndLiabilitiesDb(AssetsLessActivity.this);
+                CreateAssetsAndLiabilitiesDb createDb = new CreateAssetsAndLiabilitiesDb(LiabilitiesMoreActivity.this);
                 SQLiteDatabase db = createDb.getReadableDatabase();
                 String sql="insert into income_and_expenditure (money,income_or_expenditure,assets_or_liabilities_name,type,detail_type,create_time) " +
                         "values ('"+money+"','支出','"+assetsName+"','"+type+"','"+detailType+"','"+now+"')";
                 db.execSQL(sql);
                 //根据资产名称查询资产数额
-                sql="select money from assets_and_liabilities where type='资产' and name='"+assetsName+"'";
+                sql="select money from assets_and_liabilities where type='负债' and name='"+assetsName+"'";
                 Cursor cursor = db.rawQuery(sql,null);
                 cursor.moveToNext();
                 Double assetsMoney=Double.parseDouble(cursor.getString(0));
-                assetsMoney=assetsMoney-Double.parseDouble(money);
+                assetsMoney=assetsMoney+Double.parseDouble(money);
                 //更新资产数额
-                sql="update assets_and_liabilities set money="+assetsMoney+" where type='资产' and name='"+assetsName+"'";
+                sql="update assets_and_liabilities set money="+assetsMoney+" where type='负债' and name='"+assetsName+"'";
                 db.execSQL(sql);
                 //跳转到收支展示页面
-                Intent intent=new Intent(AssetsLessActivity.this,ShowIncomeAndExpenditureActivity.class);
+                Intent intent=new Intent(LiabilitiesMoreActivity.this,ShowIncomeAndExpenditureActivity.class);
                 startActivity(intent);
             }
         });
+
+
 
 
 

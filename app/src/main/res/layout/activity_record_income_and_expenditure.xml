@@ -42,7 +42,7 @@
                 android:layout_columnWeight="1"
                 android:layout_rowWeight="1"
                 android:text="负债增加"
-                android:id="@+id/expenditureButton" />
+                android:id="@+id/LiabilitiesMoreButton" />
         </GridLayout>
 
         <TextView

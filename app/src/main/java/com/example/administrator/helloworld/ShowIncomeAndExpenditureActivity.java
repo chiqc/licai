@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.example.administrator.helloworld.db.CreateAssetsAndLiabilitiesDb;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -28,7 +29,7 @@ public class ShowIncomeAndExpenditureActivity extends AppCompatActivity {
         Date date = new Date();
         SimpleDateFormat simpleDateFormat=new SimpleDateFormat("yyyy-MM-dd");
         String now=simpleDateFormat.format(date);
-        String sql="select money,income_or_expenditure,detail_type,create_time from income_and_expenditure";
+        String sql="select money,income_or_expenditure,detail_type,create_time from income_and_expenditure order by id desc";
         Cursor cursor = db.rawQuery(sql,null);
         Double incomeMoney=0.0;
         Double expenditureMoney=0.0;
@@ -58,10 +59,11 @@ public class ShowIncomeAndExpenditureActivity extends AppCompatActivity {
 
 
         }
+        DecimalFormat df = new DecimalFormat("0.00");
         TextView incomeMoneyTextView=(TextView)findViewById(R.id.incomeMoneyTextView);
-        incomeMoneyTextView.setText(""+incomeMoney);
+        incomeMoneyTextView.setText(""+df.format(incomeMoney));
         TextView expenditureMoneyTextView=(TextView)findViewById(R.id.expenditureMoneyTextView);
-        expenditureMoneyTextView.setText(""+expenditureMoney);
+        expenditureMoneyTextView.setText(""+df.format(expenditureMoney));
 
 
     }

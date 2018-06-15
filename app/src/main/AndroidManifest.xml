@@ -18,7 +18,7 @@
         <activity android:name=".RecordAssetsAndLiabilitiesActivity" />
         <activity android:name=".ShowAssetsAndLiabilitiesActivity" />
         <activity android:name=".RecordIncomeAndExpenditureActivity" />
-        <activity android:name=".IncomeActivity" />
+        <activity android:name=".LiabilitiesMoreActivity" />
         <activity android:name=".AssetsLessActivity" />
         <activity android:name=".ShowIncomeAndExpenditureActivity"></activity>
     </application>
