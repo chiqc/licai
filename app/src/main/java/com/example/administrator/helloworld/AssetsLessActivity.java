@@ -65,6 +65,15 @@ public class AssetsLessActivity extends AppCompatActivity {
                 String sql="insert into income_and_expenditure (money,income_or_expenditure,assets_or_liabilities_name,type,detail_type,create_time) " +
                         "values ('"+money+"','支出','"+assetsName+"','"+type+"','"+detailType+"','"+now+"')";
                 db.execSQL(sql);
+                //根据资产名称查询资产数额
+                sql="select money from assets_and_liabilities where type='资产' and name='"+assetsName+"'";
+                Cursor cursor = db.rawQuery(sql,null);
+                cursor.moveToNext();
+                Double assetsMoney=Double.parseDouble(cursor.getString(0));
+                assetsMoney=assetsMoney-Double.parseDouble(money);
+                //更新资产数额
+                sql="update assets_and_liabilities set money="+assetsMoney+" where type='资产' and name='"+assetsName+"'";
+                db.execSQL(sql);
                 //跳转到收支展示页面
                 Intent intent=new Intent(AssetsLessActivity.this,ShowIncomeAndExpenditureActivity.class);
                 startActivity(intent);
