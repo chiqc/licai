@@ -21,7 +21,8 @@
         <activity android:name=".LiabilitiesMoreActivity" />
         <activity android:name=".AssetsLessActivity" />
         <activity android:name=".ShowIncomeAndExpenditureActivity" />
-        <activity android:name=".AssetsMoreActivity"></activity>
+        <activity android:name=".AssetsMoreActivity" />
+        <activity android:name=".LiabilitiesLessActivity"></activity>
     </application>
 
 </manifest>
