@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">理财小助手</string>
+    <string name="app_name">小羊钱多多</string>
     <string-array name="spingarr">
         <item>资产</item>
         <item>负债</item>

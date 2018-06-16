@@ -32,7 +32,7 @@ public class AssetsLessActivity extends AppCompatActivity {
         String[] assetsNameArr=new String[cursor.getCount()];
         for (int i = 0; i < cursor.getCount(); i++){
             cursor.moveToNext();
-            assetsNameArr[i]=cursor.getString(i);
+            assetsNameArr[i]=cursor.getString(0);
         }
         assetsSpinner =(Spinner) findViewById(R.id.assetsSpinner);
         ArrayAdapter<String> adapter=new ArrayAdapter<String>(this,android.R.layout.simple_dropdown_item_1line,android.R.id.text1,assetsNameArr);
